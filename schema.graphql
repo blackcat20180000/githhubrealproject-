@@ -1,0 +1,65 @@
+type I_pmi_man {
+    dat: String!
+    manu_index: Float!
+}
+type IPmiManIndustry {
+    dat: String!
+    industry: String!
+    rank: Int!
+    comment: String!
+    section: Int!
+}
+type I_pmi_noman {
+    dat: String!
+    non_manu: Float!
+}
+type I_pmi_nonman_industry {
+    dat: String!
+    industry: String!
+    rank: Int!
+    comment: String!
+    type: Int!
+}
+type I_retail_sale {
+    period: String!
+    retail_sales_and_food_services: Int!
+    food_stores: Int!
+    non_store_retail: Int!
+    health: Int!
+    clothing_hobby: Int!
+    general_merch: Int!
+    food_services: Int!
+    gas_station: Int!
+    motors: Int!
+    domestic_products: Int!
+}
+type I_umcsi {
+    period: String! 
+    csi: Float!
+}
+type I_esi {
+    period: String!
+    country_code: String!
+    industry: Float!
+    services: Float!
+    consumer: Float!
+    retail: Float!
+    building: Float!
+    esi: Float!
+}
+type I_building_permit {
+    period: String!
+    permits: Int!
+    starts: Int!
+    completed: Int!
+}
+type Query {
+    I_pmi_mans(limit: Int = 25, offset: Int = 0): [I_pmi_man!]!
+    IPmiManIndustrys(limit: Int = 25, offset: Int = 0): [IPmiManIndustry!]!
+    I_pmi_nomans(limit: Int = 25, offset: Int = 0): [I_pmi_noman!]!
+    I_pmi_nonman_industries(limit: Int = 25, offset: Int = 0): [I_pmi_nonman_industry!]! 
+    I_retail_sales(limit: Int = 25, offset: Int = 0): [I_retail_sale!]!
+    I_umcsis(limit: Int = 25, offset: Int = 0): [I_umcsi!]!
+    I_esis(limit: Int = 25, offset: Int = 0): [I_esi!]!
+    I_building_permits(limit: Int = 25, offset: Int = 0): [I_building_permit!]!
+}
